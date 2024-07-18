@@ -1,4 +1,3 @@
-require('dotenv').config();
 const mongoose = require('mongoose');
 // const dbURI = 'mongodb://localhost/Loc8r';
 const readLine = require('readline');
