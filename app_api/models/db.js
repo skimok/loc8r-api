@@ -1,10 +1,19 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 // const dbURI = 'mongodb://localhost/Loc8r';
 const readLine = require('readline');
 mongoose.set("strictQuery", false);
 
-const dbPassword = process.env.MONGODB_PASSWORD;
-const dbURI = `mongodb+srv://my_atlas_user:${dbPassword}@cluster0.s0fko.mongodb.net/Loc8r`;
+// const dbURI = `mongodb+srv://my_atlas_user:tkarms77@cluster0.s0fko.mongodb.net/Loc8r`;
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+}).then(() => {
+  console.log('MongoDB connected');
+}).catch((error) => {
+  console.error('MongoDB connection error:', error);
+});
 
 const connect = () => {
   setTimeout(() => mongoose.connect(dbURI, { useNewUrlParser: true }), 1000);
