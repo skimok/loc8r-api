@@ -9,19 +9,10 @@ require('./app_api/models/db');
 const indexRouter = require('./app_server/routes/index');
 const usersRouter = require('./app_server/routes/users');
 const apiRouter = require('./app_api/routes/index');
-
-const cors = require('cors');
 var app = express();
 
-const corsOptions = {
-  origin: 'https://loc8r-api-auth.netlify.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-app.use(cors(corsOptions));
-
-app.options('*', cors(corsOptions)); // preflight 요청에 대한 처리
+require('dotenv').config();
+const googleAPIKey = process.env.GOOGLE_API_KEY;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
