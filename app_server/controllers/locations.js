@@ -1,4 +1,7 @@
 var request = require('request');
+const dotenv = require('dotenv');
+dotenv.config();
+const googleAPIKey = process.env.GOOGLE_API_KEY;
 
 const apiOptions = {
   server: 'http://localhost:3000'
@@ -180,5 +183,6 @@ module.exports = {
   homelist,
   locationInfo,
   addReview,
-  doAddReview
+  doAddReview,
+  googleAPIKey
 };
