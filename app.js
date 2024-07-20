@@ -1,3 +1,5 @@
+
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -10,10 +12,6 @@ const indexRouter = require('./app_server/routes/index');
 const usersRouter = require('./app_server/routes/users');
 const apiRouter = require('./app_api/routes/index');
 var app = express();
-
-// const dotenv = require('dotenv');
-// dotenv.config();
-// const googleAPIKey = process.env.GOOGLE_API_KEY;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
