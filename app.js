@@ -11,8 +11,9 @@ const usersRouter = require('./app_server/routes/users');
 const apiRouter = require('./app_api/routes/index');
 var app = express();
 
-require('dotenv').config();
-const googleAPIKey = process.env.GOOGLE_API_KEY;
+// const dotenv = require('dotenv');
+// dotenv.config();
+// const googleAPIKey = process.env.GOOGLE_API_KEY;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
